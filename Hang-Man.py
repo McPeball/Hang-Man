@@ -6,7 +6,7 @@ def draw_hangman():
     print(hm)
 
 draw_hangman()
-
-
-
-
+def get_word(f):
+    with open(f) as file:
+        data = file.read()
+        print(data)
