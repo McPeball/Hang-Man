@@ -27,8 +27,26 @@ def create_guess(letters):
         g.append("_")
     return(g)
 
-ws = get_word(f="words.txt")
-guess = create_guess(ws)
+def check_guess(word, guess, letter):
+    for i in range(0, len(word)):
+        if letter == word[i]:
+            guess[i] = letter
+    return(guess)
+
+
+
+
+word = get_word(f="words.txt")
+
+#print(word)
+
+guess = create_guess(word)
+
+inp = input("please type a letter\n")
+inp.rstrip()
+print(inp)
+
+guess = check_guess(word, guess, inp)
 
 print(guess)
 print("mpty string")
